@@ -1,17 +1,28 @@
-# Elecronique
+# Electro
 E-commerce Website With Symfony 4
 
+Commandes d'installation :
+On clone le dépot les bros !
 
-- git clone https://github.com/pintra/Elecronique.git
+git clone https://github.com/pintra/Electro.git
+On se déplace dans le dossier
 
-- cd Electronique
+cd Electro
+Installez des dépendances:
 
-- comopser update
+    composer install
 
-- php bin/console doctrine:database:create
+Créer une base de données et configurer les paramètres dans .env
 
-- php bin/console doctrine:migrations:migrate
+    php bin/console doctrine:database:create
 
-- php bin/console doctrine:fixtures:load
+    php bin/console doctrine:migrations:migrate
 
-- php bin/console server:run
+Installation des faux donnés
+
+    php bin/console doctrine:fixture:load
+
+Accéder aux dashboard admin :
+
+email: dhia@symfony.com
+mot de passe: 123698745
