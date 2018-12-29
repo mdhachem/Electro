@@ -1,0 +1,90 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Avis{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .review-rating {
+            color: red;
+        }
+    </style>
+
+{% endblock %}
+
+{% block body %}
+    <h1>Avis</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ avi.id }}</td>
+                <th>Produit</th>
+                <th>Produit Image</th>
+            </tr>
+            <tr>
+                <th>Rating</th>
+                <td>
+                    {% if avi.rating == 0 %}
+                        <div class="review-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o empty"></i>
+                            <i class="fa fa-star-o empty"></i>
+                            <i class="fa fa-star-o empty"></i>
+                            <i class="fa fa-star-o empty"></i>
+                        </div>
+                    {% elseif avi.rating == 1 %}
+                        <div class="review-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o empty"></i>
+                            <i class="fa fa-star-o empty"></i>
+                            <i class="fa fa-star-o empty"></i>
+                            <i class="fa fa-star-o empty"></i>
+                        </div>
+                    {% elseif avi.rating == 2  %}
+                        <div class="review-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o empty"></i>
+                            <i class="fa fa-star-o empty"></i>
+                            <i class="fa fa-star-o empty"></i>
+                        </div>
+                    {% elseif avi.rating == 3  %}
+                        <div class="review-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o empty"></i>
+                            <i class="fa fa-star-o empty"></i>
+                        </div>
+                    {% elseif avi.rating == 4  %}
+                        <div class="review-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o empty"></i>
+                        </div>
+                    {% elseif avi.rating == 5  %}
+                        <div class="review-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    {% endif %}
+                </td>
+                <td>{{ avi.produit.libelle }}</td>
+                <td><img height="100px" width="100px" src="{{ avi.produit.imagePrincipale }}"/></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('avis_index') }}">back to list</a>
+
+    <a href="{{ path('avis_edit', {'id': avi.id}) }}">edit</a>
+
+    {{ include('avis/_delete_form.html.twig') }}
+{% endblock %}
