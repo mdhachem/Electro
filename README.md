@@ -13,14 +13,13 @@ git clone https://github.com/pintra/Electro.git
 
  cd Electro
 
-
 <h4>Installez des dépendances:</h4>
 
     composer install
 
 <h4>Créer une base de données et configurer les paramètres dans .env</h4>
 
-    php bin/console doctrine:database:create <br>
+    php bin/console doctrine:database:create 
 
     php bin/console doctrine:migrations:migrate
 
